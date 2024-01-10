@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ahttp"
+version = "0.1.0"
+description = "async http server"
+authors = ["ilia <kavaleuilia@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "ahttp", from = "src/"}
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
