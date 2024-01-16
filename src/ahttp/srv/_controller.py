@@ -43,6 +43,8 @@ class Controller(asyncio.Protocol):
         req = Request(meth, path, version, headers, raw_body)
 
         handler = tuple(filter(lambda v: path == v[0], urlspatterns))[0][1]
+        handler = next(controller for url_path, controller in urlpatterns if path == url_path)
+
         resp = handler(req)
         loop = asyncio.get_running_loop()
 
